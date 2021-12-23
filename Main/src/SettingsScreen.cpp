@@ -89,6 +89,11 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 		case GameConfigKeys::Key_SongSelect_StartPractice:
 			return "Start song in practice mode";
 
+		case GameConfigKeys::Key_Challenge_InfoLeft:
+			return "Scroll challenge info left";
+		case GameConfigKeys::Key_Challenge_InfoRight:
+			return "Scroll challenge info right";
+
 		default:
 			return Enum_GameConfigKeys::ToString(key);
 	}
@@ -155,6 +160,7 @@ protected:
 	bool m_altBinds = false;
 
 	const Vector<GameConfigKeys>* m_activeSongSelectKeys = &m_songSelectKeys;
+	const Vector<GameConfigKeys>* m_activeMiscKeys = &m_miscKeys;
 
 	const Vector<GameConfigKeys> m_keyboardKeys = {
 		GameConfigKeys::Key_BTS,
@@ -193,6 +199,10 @@ protected:
 		GameConfigKeys::Key_SongSelect_OpenSearch,
 		GameConfigKeys::Key_SongSelect_CloseSearch,
 		GameConfigKeys::Key_SongSelect_StartPractice
+	};
+	const Vector<GameConfigKeys> m_miscKeys = {
+		GameConfigKeys::Key_Challenge_InfoLeft,
+		GameConfigKeys::Key_Challenge_InfoRight
 	};
 
 	const Vector<GameConfigKeys> m_keyboardLaserKeys = {
@@ -454,11 +464,23 @@ private:
 
 	inline void RenderUIControlsSettings()
 	{
-		LayoutRowDynamic(2, m_lineHeight);
-		for (size_t i = 0; i < m_songSelectKeys.size(); i++) {
-			Label(GetKeyNameFromConfigKey(m_songSelectKeys[i]) + ":");
-			if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*m_activeSongSelectKeys)[i]))))
-				OpenButtonBind((*m_activeSongSelectKeys)[i]);
+		if (nk_tree_push(m_nctx, NK_TREE_NODE, "Song Select", NK_MINIMIZED)) {
+			LayoutRowDynamic(2, m_lineHeight);
+			for (size_t i = 0; i < m_songSelectKeys.size(); i++) {
+				Label(GetKeyNameFromConfigKey(m_songSelectKeys[i]) + ":");
+				if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*m_activeSongSelectKeys)[i]))))
+					OpenButtonBind((*m_activeSongSelectKeys)[i]);
+			}
+			nk_tree_pop(m_nctx);
+		}
+		if (nk_tree_push(m_nctx, NK_TREE_NODE, "Misc", NK_MINIMIZED)) {
+			LayoutRowDynamic(2, m_lineHeight);
+			for (size_t i = 0; i < m_miscKeys.size(); i++) {
+				Label(GetKeyNameFromConfigKey(m_miscKeys[i]) + ":");
+				if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*m_activeMiscKeys)[i]))))
+					OpenButtonBind((*m_activeMiscKeys)[i]);
+			}
+			nk_tree_pop(m_nctx);
 		}
 	}
 

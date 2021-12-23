@@ -128,6 +128,8 @@ DefineEnum(GameConfigKeys,
 		   Key_SongSelect_OpenSearch,
 		   Key_SongSelect_CloseSearch,
 		   Key_SongSelect_StartPractice,
+		   Key_Challenge_InfoLeft,
+		   Key_Challenge_InfoRight,
 
 		   // Controller bindings
 		   Controller_DeviceID,

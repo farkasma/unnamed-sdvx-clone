@@ -43,7 +43,9 @@ public:
 		SongSelect_OpenDirectory,
 		SongSelect_OpenSearch,
 		SongSelect_CloseSearch,
-		SongSelect_StartPractice
+		SongSelect_StartPractice,
+		Challenge_InfoLeft,
+		Challenge_InfoRight
 	)
 
 	~Input();

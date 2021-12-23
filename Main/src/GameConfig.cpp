@@ -187,6 +187,8 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_SongSelect_OpenSearch, SDL_SCANCODE_TAB),
 	Set(GameConfigKeys::Key_SongSelect_CloseSearch, SDL_SCANCODE_RETURN),
 	Set(GameConfigKeys::Key_SongSelect_StartPractice, SDL_SCANCODE_GRAVE),
+	Set(GameConfigKeys::Key_Challenge_InfoLeft, SDL_SCANCODE_LEFT),
+	Set(GameConfigKeys::Key_Challenge_InfoRight, SDL_SCANCODE_RIGHT),
 
 	// Default controller settings
 	SetBlob<16>(GameConfigKeys::Controller_DeviceID, { 0 }); // null device
@@ -410,6 +412,8 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_SongSelect_OpenSearch),
 	Key(Key_SongSelect_CloseSearch),
 	Key(Key_SongSelect_StartPractice),
+	Key(Key_Challenge_InfoLeft),
+	Key(Key_Challenge_InfoRight),
 
 	Key(Controller_DeviceID),
 	Key(Controller_BTS),

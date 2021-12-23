@@ -384,6 +384,8 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_OpenSearch), Button::SongSelect_OpenSearch);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_CloseSearch), Button::SongSelect_CloseSearch);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_StartPractice), Button::SongSelect_StartPractice);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoLeft), Button::Challenge_InfoLeft);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoRight), Button::Challenge_InfoRight);
 
 }
 
