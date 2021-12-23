@@ -386,7 +386,13 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_StartPractice), Button::SongSelect_StartPractice);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoLeft), Button::Challenge_InfoLeft);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoRight), Button::Challenge_InfoRight);
-
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Bailout), Button::Game_Bailout);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Pause), Button::Game_Pause);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_SkipIntro), Button::Game_SkipIntro);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Advance), Button::Game_Advance);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Restart), Button::Game_Restart);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_DebugHUD), Button::Game_DebugHUD);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Reload), Button::Game_Reload);
 }
 
 void Input::m_InitControllerMapping()

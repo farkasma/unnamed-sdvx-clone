@@ -45,7 +45,14 @@ public:
 		SongSelect_CloseSearch,
 		SongSelect_StartPractice,
 		Challenge_InfoLeft,
-		Challenge_InfoRight
+		Challenge_InfoRight,
+		Game_Bailout,
+		Game_Pause,
+		Game_SkipIntro,
+		Game_Advance,
+		Game_Restart,
+		Game_DebugHUD,
+		Game_Reload
 	)
 
 	~Input();

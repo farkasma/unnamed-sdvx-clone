@@ -131,6 +131,14 @@ DefineEnum(GameConfigKeys,
 		   Key_Challenge_InfoLeft,
 		   Key_Challenge_InfoRight,
 
+		   Key_Game_Bailout,
+		   Key_Game_Pause,
+		   Key_Game_SkipIntro,
+		   Key_Game_Advance,
+		   Key_Game_Restart,
+		   Key_Game_DebugHUD,
+		   Key_Game_Reload,
+
 		   // Controller bindings
 		   Controller_DeviceID,
 		   Controller_BTS,

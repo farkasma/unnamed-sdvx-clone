@@ -189,6 +189,13 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_SongSelect_StartPractice, SDL_SCANCODE_GRAVE),
 	Set(GameConfigKeys::Key_Challenge_InfoLeft, SDL_SCANCODE_LEFT),
 	Set(GameConfigKeys::Key_Challenge_InfoRight, SDL_SCANCODE_RIGHT),
+	Set(GameConfigKeys::Key_Game_Bailout, SDL_SCANCODE_BACKSPACE),
+	Set(GameConfigKeys::Key_Game_Pause, SDL_SCANCODE_PAUSE),
+	Set(GameConfigKeys::Key_Game_SkipIntro, SDL_SCANCODE_RETURN),
+	Set(GameConfigKeys::Key_Game_Advance, SDL_SCANCODE_PAGEUP),
+	Set(GameConfigKeys::Key_Game_Restart, SDL_SCANCODE_F5),
+	Set(GameConfigKeys::Key_Game_DebugHUD, SDL_SCANCODE_F8),
+	Set(GameConfigKeys::Key_Game_Reload, SDL_SCANCODE_F9),
 
 	// Default controller settings
 	SetBlob<16>(GameConfigKeys::Controller_DeviceID, { 0 }); // null device
@@ -414,6 +421,13 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_SongSelect_StartPractice),
 	Key(Key_Challenge_InfoLeft),
 	Key(Key_Challenge_InfoRight),
+	Key(Key_Game_Bailout),
+	Key(Key_Game_Pause),
+	Key(Key_Game_SkipIntro),
+	Key(Key_Game_Advance),
+	Key(Key_Game_Restart),
+	Key(Key_Game_DebugHUD),
+	Key(Key_Game_Reload),
 
 	Key(Controller_DeviceID),
 	Key(Controller_BTS),

@@ -94,6 +94,21 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 		case GameConfigKeys::Key_Challenge_InfoRight:
 			return "Scroll challenge info right";
 
+		case GameConfigKeys::Key_Game_Bailout:
+			return "End practice mode";
+		case GameConfigKeys::Key_Game_Pause:
+			return "Pause";
+		case GameConfigKeys::Key_Game_SkipIntro:
+			return "Skip intro/outro";
+		case GameConfigKeys::Key_Game_Advance:
+			return "Jump 5s forwards";
+		case GameConfigKeys::Key_Game_Restart:
+			return "Restart";
+		case GameConfigKeys::Key_Game_DebugHUD:
+			return "Toggle debug HUD";
+		case GameConfigKeys::Key_Game_Reload:
+			return "Reload song";
+
 		default:
 			return Enum_GameConfigKeys::ToString(key);
 	}
@@ -160,6 +175,7 @@ protected:
 	bool m_altBinds = false;
 
 	const Vector<GameConfigKeys>* m_activeSongSelectKeys = &m_songSelectKeys;
+	const Vector<GameConfigKeys>* m_activeGameKeys = &m_gameKeys;
 	const Vector<GameConfigKeys>* m_activeMiscKeys = &m_miscKeys;
 
 	const Vector<GameConfigKeys> m_keyboardKeys = {
@@ -199,6 +215,15 @@ protected:
 		GameConfigKeys::Key_SongSelect_OpenSearch,
 		GameConfigKeys::Key_SongSelect_CloseSearch,
 		GameConfigKeys::Key_SongSelect_StartPractice
+	};
+	const Vector<GameConfigKeys> m_gameKeys = {
+		GameConfigKeys::Key_Game_Bailout,
+		GameConfigKeys::Key_Game_Pause,
+		GameConfigKeys::Key_Game_SkipIntro,
+		GameConfigKeys::Key_Game_Advance,
+		GameConfigKeys::Key_Game_Restart,
+		GameConfigKeys::Key_Game_DebugHUD,
+		GameConfigKeys::Key_Game_Reload
 	};
 	const Vector<GameConfigKeys> m_miscKeys = {
 		GameConfigKeys::Key_Challenge_InfoLeft,
@@ -464,21 +489,20 @@ private:
 
 	inline void RenderUIControlsSettings()
 	{
-		if (nk_tree_push(m_nctx, NK_TREE_NODE, "Song Select", NK_MINIMIZED)) {
+		_RenderSingleUIControlsSettings(0, "Song Select", m_songSelectKeys, m_activeSongSelectKeys);
+		_RenderSingleUIControlsSettings(1, "In Game", m_gameKeys, m_activeGameKeys);
+		_RenderSingleUIControlsSettings(2, "Misc", m_miscKeys, m_activeMiscKeys);
+	}
+	inline void _RenderSingleUIControlsSettings(int index, const char* name, Vector<GameConfigKeys> keys, const Vector<GameConfigKeys>* activeKeys)
+	{
+		if (nk_tree_push_id(m_nctx, NK_TREE_NODE, name, NK_MINIMIZED, index))
+		{
 			LayoutRowDynamic(2, m_lineHeight);
-			for (size_t i = 0; i < m_songSelectKeys.size(); i++) {
-				Label(GetKeyNameFromConfigKey(m_songSelectKeys[i]) + ":");
-				if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*m_activeSongSelectKeys)[i]))))
-					OpenButtonBind((*m_activeSongSelectKeys)[i]);
-			}
-			nk_tree_pop(m_nctx);
-		}
-		if (nk_tree_push(m_nctx, NK_TREE_NODE, "Misc", NK_MINIMIZED)) {
-			LayoutRowDynamic(2, m_lineHeight);
-			for (size_t i = 0; i < m_miscKeys.size(); i++) {
-				Label(GetKeyNameFromConfigKey(m_miscKeys[i]) + ":");
-				if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*m_activeMiscKeys)[i]))))
-					OpenButtonBind((*m_activeMiscKeys)[i]);
+			for (size_t i = 0; i < keys.size(); i++)
+			{
+				Label(GetKeyNameFromConfigKey(keys[i]) + ":");
+				if (nk_button_label(m_nctx, GetKeyNameFromScancodeConfig(g_gameConfig.GetInt((*activeKeys)[i]))))
+					OpenButtonBind((*activeKeys)[i]);
 			}
 			nk_tree_pop(m_nctx);
 		}
