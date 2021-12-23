@@ -199,7 +199,7 @@ public:
 		if (m_songlua)
 		{
 			ChartIndex* chart = next->GetChartIndex();
-			
+
 			if (chart)
 			{
 				String path = Path::RemoveLast(chart->path);
@@ -411,7 +411,7 @@ public:
 		return true;
 	}
 
-	void OnKeyPressed(SDL_Scancode code)
+	void OnKeyPressed(SDL_Scancode code, int32 delta)
 	{
 		if (code == SDL_SCANCODE_ESCAPE && !m_stopped && m_canCancel)
 		{
