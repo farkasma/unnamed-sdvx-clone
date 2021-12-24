@@ -2353,13 +2353,6 @@ public:
 
 	void OnKeyReleased(SDL_Scancode code, int32 delta) override
 	{
-		if (m_practiceSetupDialog && m_practiceSetupDialog->IsActive())
-			return;
-
-		if (code == SDL_SCANCODE_F5)
-		{
-			m_restartTriggerTimeSet = false;
-		}
 	}
 
 	void TriggerManualExit()
@@ -2382,6 +2375,10 @@ public:
 	}
 	void m_OnButtonReleased(Input::Button buttonCode, int32 delta) {
 		m_releaseTimes[(size_t)buttonCode] = SDL_GetTicks();
+
+		if (buttonCode == Input::Button::Game_Restart)
+			if (!(m_practiceSetupDialog || m_practiceSetupDialog->IsActive()))
+				m_restartTriggerTimeSet = false;
 	}
 	void m_OnButtonPressed(Input::Button buttonCode, int32 delta)
 	{
