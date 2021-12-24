@@ -42,8 +42,6 @@ public:
 		SongSelect_OpenSearch,
 		SongSelect_CloseSearch,
 		SongSelect_StartPractice,
-		Challenge_InfoLeft,
-		Challenge_InfoRight,
 		Game_Bailout,
 		Game_Pause,
 		Game_SkipIntro,
@@ -53,6 +51,10 @@ public:
 		Result_Continue,
 		Result_Screenshot,
 		ReloadSkin,
+		ScrollLeft,
+		ScrollRight,
+		ScrollUp,
+		ScrollDown,
 		Length
 	)
 

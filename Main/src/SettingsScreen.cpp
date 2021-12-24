@@ -87,11 +87,6 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 		case GameConfigKeys::Key_SongSelect_StartPractice:
 			return "Start song in practice mode";
 
-		case GameConfigKeys::Key_Challenge_InfoLeft:
-			return "Scroll challenge info left";
-		case GameConfigKeys::Key_Challenge_InfoRight:
-			return "Scroll challenge info right";
-
 		case GameConfigKeys::Key_Game_Bailout:
 			return "End practice mode";
 		case GameConfigKeys::Key_Game_Pause:
@@ -112,6 +107,15 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 
 		case GameConfigKeys::Key_ReloadSkin:
 			return "Reload skin";
+		case GameConfigKeys::Key_ScrollLeft:
+			return "Scroll left";
+		case GameConfigKeys::Key_ScrollRight:
+			return "Scroll right";
+		case GameConfigKeys::Key_ScrollUp:
+			return "Scroll up";
+		case GameConfigKeys::Key_ScrollDown:
+			return "Scroll down";
+
 		default:
 			return Enum_GameConfigKeys::ToString(key);
 	}
@@ -233,8 +237,10 @@ protected:
 	};
 	const Vector<GameConfigKeys> m_miscKeys = {
 		GameConfigKeys::Key_ReloadSkin,
-		GameConfigKeys::Key_Challenge_InfoLeft,
-		GameConfigKeys::Key_Challenge_InfoRight
+		GameConfigKeys::Key_ScrollLeft,
+		GameConfigKeys::Key_ScrollRight,
+		GameConfigKeys::Key_ScrollUp,
+		GameConfigKeys::Key_ScrollDown,
 	};
 
 	const Vector<GameConfigKeys> m_keyboardLaserKeys = {

@@ -383,8 +383,6 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_OpenSearch), Button::SongSelect_OpenSearch);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_CloseSearch), Button::SongSelect_CloseSearch);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_StartPractice), Button::SongSelect_StartPractice);
-	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoLeft), Button::Challenge_InfoLeft);
-	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Challenge_InfoRight), Button::Challenge_InfoRight);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Bailout), Button::Game_Bailout);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Pause), Button::Game_Pause);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_SkipIntro), Button::Game_SkipIntro);
@@ -394,6 +392,10 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Result_Continue), Button::Result_Continue);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Result_Screenshot), Button::Result_Screenshot);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ReloadSkin), Button::ReloadSkin);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ScrollLeft), Button::ScrollLeft);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ScrollRight), Button::ScrollRight);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ScrollUp), Button::ScrollUp);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ScrollDown), Button::ScrollDown);
 }
 
 void Input::m_InitControllerMapping()

@@ -994,11 +994,11 @@ public:
 				case Input::Button::SongSelect_FastUp:
 					m_selectionWheel->AdvancePage(-1);
 					break;
-				case Input::Button::Challenge_InfoLeft:
+				case Input::Button::ScrollLeft:
 					m_selectionWheel->m_scrollAmount -= 1.0;
 					m_selectionWheel->m_SetLuaItemIndex();
 					break;
-				case Input::Button::Challenge_InfoRight:
+				case Input::Button::ScrollRight:
 					m_selectionWheel->m_scrollAmount += 1.0;
 					m_selectionWheel->m_SetLuaItemIndex();
 					break;

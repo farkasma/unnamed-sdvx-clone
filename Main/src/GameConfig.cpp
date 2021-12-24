@@ -186,8 +186,6 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_SongSelect_OpenSearch, SDL_SCANCODE_TAB),
 	Set(GameConfigKeys::Key_SongSelect_CloseSearch, SDL_SCANCODE_RETURN),
 	Set(GameConfigKeys::Key_SongSelect_StartPractice, SDL_SCANCODE_GRAVE),
-	Set(GameConfigKeys::Key_Challenge_InfoLeft, SDL_SCANCODE_LEFT),
-	Set(GameConfigKeys::Key_Challenge_InfoRight, SDL_SCANCODE_RIGHT),
 	Set(GameConfigKeys::Key_Game_Bailout, SDL_SCANCODE_BACKSPACE),
 	Set(GameConfigKeys::Key_Game_Pause, SDL_SCANCODE_PAUSE),
 	Set(GameConfigKeys::Key_Game_SkipIntro, SDL_SCANCODE_RETURN),
@@ -197,6 +195,10 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_Result_Continue, SDL_SCANCODE_RETURN),
 	Set(GameConfigKeys::Key_Result_Screenshot, SDL_SCANCODE_F12),
 	Set(GameConfigKeys::Key_ReloadSkin, SDL_SCANCODE_F9),
+	Set(GameConfigKeys::Key_ScrollLeft, SDL_SCANCODE_LEFT),
+	Set(GameConfigKeys::Key_ScrollRight, SDL_SCANCODE_RIGHT),
+	Set(GameConfigKeys::Key_ScrollUp, SDL_SCANCODE_UP),
+	Set(GameConfigKeys::Key_ScrollDown, SDL_SCANCODE_DOWN),
 
 	// Default controller settings
 	SetBlob<16>(GameConfigKeys::Controller_DeviceID, { 0 }); // null device
@@ -419,8 +421,6 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_SongSelect_OpenSearch),
 	Key(Key_SongSelect_CloseSearch),
 	Key(Key_SongSelect_StartPractice),
-	Key(Key_Challenge_InfoLeft),
-	Key(Key_Challenge_InfoRight),
 	Key(Key_Game_Bailout),
 	Key(Key_Game_Pause),
 	Key(Key_Game_SkipIntro),
@@ -430,6 +430,10 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_Result_Continue),
 	Key(Key_Result_Screenshot),
 	Key(Key_ReloadSkin),
+	Key(Key_ScrollLeft),
+	Key(Key_ScrollRight),
+	Key(Key_ScrollUp),
+	Key(Key_ScrollDown),
 
 	Key(Controller_DeviceID),
 	Key(Controller_BTS),
