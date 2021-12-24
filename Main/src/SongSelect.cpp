@@ -1411,7 +1411,7 @@ public:
 				case Input::Button::SongSelect_Demo:
 					StartDemo();
 					break;
-				case Input::Button::SongSelect_ReloadSkin:
+				case Input::Button::ReloadSkin:
 					m_selectionWheel->ReloadScript();
 					m_filterSelection->ReloadScript();
 					g_application->ReloadScript("songselect/background", m_lua);

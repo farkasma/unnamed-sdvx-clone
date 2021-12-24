@@ -75,9 +75,7 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 		case GameConfigKeys::Key_SongSelect_ReloadSongs:
 			return "Reload song database";
 		case GameConfigKeys::Key_SongSelect_Demo:
-			return "Play song demo";
-		case GameConfigKeys::Key_SongSelect_ReloadSkin:
-			return "Reload skin";
+			return "Start demo mode";
 		case GameConfigKeys::Key_SongSelect_OpenEditor:
 			return "Open song in editor";
 		case GameConfigKeys::Key_SongSelect_OpenDirectory:
@@ -106,9 +104,14 @@ static const String GetKeyNameFromConfigKey(GameConfigKeys key) {
 			return "Restart";
 		case GameConfigKeys::Key_Game_DebugHUD:
 			return "Toggle debug HUD";
-		case GameConfigKeys::Key_Game_Reload:
-			return "Reload song";
 
+		case GameConfigKeys::Key_Result_Continue:
+			return "Return to song select";
+		case GameConfigKeys::Key_Result_Screenshot:
+			return "Save screenshot";
+
+		case GameConfigKeys::Key_ReloadSkin:
+			return "Reload skin";
 		default:
 			return Enum_GameConfigKeys::ToString(key);
 	}
@@ -176,6 +179,7 @@ protected:
 
 	const Vector<GameConfigKeys>* m_activeSongSelectKeys = &m_songSelectKeys;
 	const Vector<GameConfigKeys>* m_activeGameKeys = &m_gameKeys;
+	const Vector<GameConfigKeys>* m_activeResultKeys = &m_resultKeys;
 	const Vector<GameConfigKeys>* m_activeMiscKeys = &m_miscKeys;
 
 	const Vector<GameConfigKeys> m_keyboardKeys = {
@@ -209,7 +213,6 @@ protected:
 		GameConfigKeys::Key_SongSelect_Random,
 		GameConfigKeys::Key_SongSelect_ReloadSongs,
 		GameConfigKeys::Key_SongSelect_Demo,
-		GameConfigKeys::Key_SongSelect_ReloadSkin,
 		GameConfigKeys::Key_SongSelect_OpenEditor,
 		GameConfigKeys::Key_SongSelect_OpenDirectory,
 		GameConfigKeys::Key_SongSelect_OpenSearch,
@@ -222,10 +225,14 @@ protected:
 		GameConfigKeys::Key_Game_SkipIntro,
 		GameConfigKeys::Key_Game_Advance,
 		GameConfigKeys::Key_Game_Restart,
-		GameConfigKeys::Key_Game_DebugHUD,
-		GameConfigKeys::Key_Game_Reload
+		GameConfigKeys::Key_Game_DebugHUD
+	};
+	const Vector<GameConfigKeys> m_resultKeys = {
+		GameConfigKeys::Key_Result_Continue,
+		GameConfigKeys::Key_Result_Screenshot
 	};
 	const Vector<GameConfigKeys> m_miscKeys = {
+		GameConfigKeys::Key_ReloadSkin,
 		GameConfigKeys::Key_Challenge_InfoLeft,
 		GameConfigKeys::Key_Challenge_InfoRight
 	};
@@ -491,7 +498,8 @@ private:
 	{
 		_RenderSingleUIControlsSettings(0, "Song Select", m_songSelectKeys, m_activeSongSelectKeys);
 		_RenderSingleUIControlsSettings(1, "In Game", m_gameKeys, m_activeGameKeys);
-		_RenderSingleUIControlsSettings(2, "Misc", m_miscKeys, m_activeMiscKeys);
+		_RenderSingleUIControlsSettings(2, "Results", m_resultKeys, m_activeResultKeys);
+		_RenderSingleUIControlsSettings(3, "Misc", m_miscKeys, m_activeMiscKeys);
 	}
 	inline void _RenderSingleUIControlsSettings(int index, const char* name, Vector<GameConfigKeys> keys, const Vector<GameConfigKeys>* activeKeys)
 	{

@@ -37,7 +37,6 @@ public:
 		SongSelect_Random,
 		SongSelect_ReloadSongs,
 		SongSelect_Demo,
-		SongSelect_ReloadSkin,
 		SongSelect_OpenEditor,
 		SongSelect_OpenDirectory,
 		SongSelect_OpenSearch,
@@ -51,7 +50,9 @@ public:
 		Game_Advance,
 		Game_Restart,
 		Game_DebugHUD,
-		Game_Reload,
+		Result_Continue,
+		Result_Screenshot,
+		ReloadSkin,
 		Length
 	)
 

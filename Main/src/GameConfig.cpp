@@ -181,7 +181,6 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_SongSelect_Random, SDL_SCANCODE_F2),
 	Set(GameConfigKeys::Key_SongSelect_ReloadSongs, SDL_SCANCODE_F5),
 	Set(GameConfigKeys::Key_SongSelect_Demo, SDL_SCANCODE_F8),
-	Set(GameConfigKeys::Key_SongSelect_ReloadSkin, SDL_SCANCODE_F9),
 	Set(GameConfigKeys::Key_SongSelect_OpenEditor, SDL_SCANCODE_F11),
 	Set(GameConfigKeys::Key_SongSelect_OpenDirectory, SDL_SCANCODE_F12),
 	Set(GameConfigKeys::Key_SongSelect_OpenSearch, SDL_SCANCODE_TAB),
@@ -195,7 +194,9 @@ void GameConfig::InitDefaults()
 	Set(GameConfigKeys::Key_Game_Advance, SDL_SCANCODE_PAGEUP),
 	Set(GameConfigKeys::Key_Game_Restart, SDL_SCANCODE_F5),
 	Set(GameConfigKeys::Key_Game_DebugHUD, SDL_SCANCODE_F8),
-	Set(GameConfigKeys::Key_Game_Reload, SDL_SCANCODE_F9),
+	Set(GameConfigKeys::Key_Result_Continue, SDL_SCANCODE_RETURN),
+	Set(GameConfigKeys::Key_Result_Screenshot, SDL_SCANCODE_F12),
+	Set(GameConfigKeys::Key_ReloadSkin, SDL_SCANCODE_F9),
 
 	// Default controller settings
 	SetBlob<16>(GameConfigKeys::Controller_DeviceID, { 0 }); // null device
@@ -413,7 +414,6 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_SongSelect_Random),
 	Key(Key_SongSelect_ReloadSongs),
 	Key(Key_SongSelect_Demo),
-	Key(Key_SongSelect_ReloadSkin),
 	Key(Key_SongSelect_OpenEditor),
 	Key(Key_SongSelect_OpenDirectory),
 	Key(Key_SongSelect_OpenSearch),
@@ -427,7 +427,9 @@ ConfigBase::KeyList GameConfigProfileSettings = {
 	Key(Key_Game_Advance),
 	Key(Key_Game_Restart),
 	Key(Key_Game_DebugHUD),
-	Key(Key_Game_Reload),
+	Key(Key_Result_Continue),
+	Key(Key_Result_Screenshot),
+	Key(Key_ReloadSkin),
 
 	Key(Controller_DeviceID),
 	Key(Controller_BTS),

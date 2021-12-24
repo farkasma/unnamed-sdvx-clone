@@ -2489,7 +2489,7 @@ public:
 			case Input::Button::Game_DebugHUD:
 				m_renderDebugHUD = !m_renderDebugHUD;
 				break;
-			case Input::Button::Game_Reload:
+			case Input::Button::ReloadSkin:
 				g_application->ReloadScript("gameplay", m_lua);
 				break;
 		}

@@ -378,7 +378,6 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_Random), Button::SongSelect_Random);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_ReloadSongs), Button::SongSelect_ReloadSongs);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_Demo), Button::SongSelect_Demo);
-	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_ReloadSkin), Button::SongSelect_ReloadSkin);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_OpenEditor), Button::SongSelect_OpenEditor);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_OpenDirectory), Button::SongSelect_OpenDirectory);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_SongSelect_OpenSearch), Button::SongSelect_OpenSearch);
@@ -392,7 +391,9 @@ void Input::m_InitKeyboardMapping()
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Advance), Button::Game_Advance);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Restart), Button::Game_Restart);
 	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_DebugHUD), Button::Game_DebugHUD);
-	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Game_Reload), Button::Game_Reload);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Result_Continue), Button::Result_Continue);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_Result_Screenshot), Button::Result_Screenshot);
+	m_buttonMap.Add(g_gameConfig.GetInt(GameConfigKeys::Key_ReloadSkin), Button::ReloadSkin);
 }
 
 void Input::m_InitControllerMapping()
