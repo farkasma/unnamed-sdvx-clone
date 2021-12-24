@@ -2377,7 +2377,7 @@ public:
 		m_releaseTimes[(size_t)buttonCode] = SDL_GetTicks();
 
 		if (buttonCode == Input::Button::Game_Restart)
-			if (!(m_practiceSetupDialog || m_practiceSetupDialog->IsActive()))
+			if (!(m_practiceSetupDialog && m_practiceSetupDialog->IsActive()))
 				m_restartTriggerTimeSet = false;
 	}
 	void m_OnButtonPressed(Input::Button buttonCode, int32 delta)
