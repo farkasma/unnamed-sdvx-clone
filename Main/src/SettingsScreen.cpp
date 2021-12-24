@@ -502,8 +502,8 @@ private:
 
 	inline void RenderUIControlsSettings()
 	{
-		_RenderSingleUIControlsSettings(0, "Song Select", m_songSelectKeys, m_activeSongSelectKeys);
-		_RenderSingleUIControlsSettings(1, "In Game", m_gameKeys, m_activeGameKeys);
+		_RenderSingleUIControlsSettings(0, "Song select (and downloads)", m_songSelectKeys, m_activeSongSelectKeys);
+		_RenderSingleUIControlsSettings(1, "In-game", m_gameKeys, m_activeGameKeys);
 		_RenderSingleUIControlsSettings(2, "Results", m_resultKeys, m_activeResultKeys);
 		_RenderSingleUIControlsSettings(3, "Misc", m_miscKeys, m_activeMiscKeys);
 	}
