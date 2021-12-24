@@ -27,7 +27,6 @@ public:
 		LS_1Neg, // Right laser-	(<----|)
 		LS_1Pos, // Right laser+
 		Back,
-		Length,
 		SongSelect_Up,
 		SongSelect_Down,
 		SongSelect_FastUp,
@@ -52,7 +51,8 @@ public:
 		Game_Advance,
 		Game_Restart,
 		Game_DebugHUD,
-		Game_Reload
+		Game_Reload,
+		Length
 	)
 
 	~Input();
