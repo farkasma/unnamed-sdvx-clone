@@ -336,13 +336,13 @@ public:
 		m_scroll += steps;
 	}
 
-	virtual void OnKeyPressed(SDL_Scancode code, int32 delta) override
+	void OnKeyPressed(SDL_Scancode code, int32 delta) override
 	{
 	}
-	virtual void OnKeyReleased(SDL_Scancode code, int32 delta) override
+	void OnKeyReleased(SDL_Scancode code, int32 delta) override
 	{
 	}
-	virtual void Render(float deltaTime) override
+	void Render(float deltaTime) override
 	{
 		lua_getglobal(m_lua, "render");
 		lua_pushnumber(m_lua, deltaTime);
@@ -356,7 +356,7 @@ public:
 		}
 		m_hasRendered = true;
 	}
-	virtual void Tick(float deltaTime) override
+	void Tick(float deltaTime) override
 	{
 		if (!m_hasScreenshot && m_hasRendered && !IsSuspended())
 		{
